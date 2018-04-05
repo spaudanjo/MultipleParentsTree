@@ -1610,8 +1610,1174 @@
        ],
        "dummy": false
    }
-],
-    $productsSelect = $('select.products-select'),
+]
+    // var linksData = [
+    //         {
+    //             "product_id": 93030,
+    //             "rdb_id": 152,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:05.847954Z",
+    //                 "created_on": "2018-03-29T07:28:05.847913Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": false,
+    //                 "filter": false,
+    //                 "name": "Better chemicals warehouse",
+    //                 "address": {
+    //                     "id": 296,
+    //                     "city": "Ludwigshafen",
+    //                     "country": "Germany",
+    //                     "longitude": "9.057743000000000",
+    //                     "location_type": "city",
+    //                     "latitude": "47.819767800000001"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 126,
+    //                     "name": "Better Chemicals"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 11,
+    //                     "name": "Warehouse"
+    //                 },
+    //                 "id": 152,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": false,
+    //                 "certificates": [],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93030,
+    //             "filter": false,
+    //             "created": 1522821849398,
+    //             "name": "Better chemicals warehouse"
+    //         },
+    //         {
+    //             "product_id": 93034,
+    //             "rdb_id": 156,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:14.067149Z",
+    //                 "created_on": "2018-03-29T07:28:14.067117Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": true,
+    //                 "filter": false,
+    //                 "name": "Supplier facility 0",
+    //                 "address": {
+    //                     "id": 300,
+    //                     "city": "Beijing",
+    //                     "country": "China",
+    //                     "longitude": "116.386671199999995",
+    //                     "location_type": "street",
+    //                     "latitude": "39.859152500000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 130,
+    //                     "name": "Supplier_0"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 156,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": true,
+    //                 "certificates": [
+    //                     9,
+    //                     21,
+    //                     29,
+    //                     53
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93034,
+    //             "filter": false,
+    //             "created": 1522821849419,
+    //             "name": "Supplier facility 0",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93030
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93031,
+    //             "rdb_id": 153,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:06.737031Z",
+    //                 "created_on": "2018-03-29T07:28:06.736993Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": false,
+    //                 "filter": false,
+    //                 "name": "Soy Factory",
+    //                 "address": {
+    //                     "id": 297,
+    //                     "city": "Qingpu",
+    //                     "country": "China",
+    //                     "longitude": "121.176600100000002",
+    //                     "location_type": "street",
+    //                     "latitude": "31.271404499999999"
+    //                 },
+    //                 "subcontractors": [
+    //                     {
+    //                         "name": "Subcontractor 1 facility",
+    //                         "id": 154
+    //                     },
+    //                     {
+    //                         "name": "Subcontractor 2 facility",
+    //                         "id": 155
+    //                     }
+    //                 ],
+    //                 "company": {
+    //                     "id": 127,
+    //                     "name": "Syn Omega"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 153,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": false,
+    //                 "certificates": [],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93031,
+    //             "filter": false,
+    //             "created": 1522821849399,
+    //             "name": "Soy Factory",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93034
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93038,
+    //             "rdb_id": 160,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:15.237837Z",
+    //                 "created_on": "2018-03-29T07:28:15.237797Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": true,
+    //                 "filter": false,
+    //                 "name": "Supplier facility 4",
+    //                 "address": {
+    //                     "id": 304,
+    //                     "city": "Hà Nội",
+    //                     "country": "Viet Nam",
+    //                     "longitude": "105.838394600000001",
+    //                     "location_type": "street",
+    //                     "latitude": "21.028285199999999"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 134,
+    //                     "name": "Supplier_4"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 160,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": true,
+    //                 "certificates": [
+    //                     11,
+    //                     43
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93038,
+    //             "filter": false,
+    //             "created": 1522821849438,
+    //             "name": "Supplier facility 4",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93034
+    //                 },
+    //                 {
+    //                     "id": 93036
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93036,
+    //             "rdb_id": 158,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:14.660542Z",
+    //                 "created_on": "2018-03-29T07:28:14.660502Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": false,
+    //                 "filter": false,
+    //                 "name": "Supplier facility 2",
+    //                 "address": {
+    //                     "id": 302,
+    //                     "city": "Khet Watthana",
+    //                     "country": "Thailand",
+    //                     "longitude": "100.552942799999997",
+    //                     "location_type": "street",
+    //                     "latitude": "13.744870700000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 132,
+    //                     "name": "Supplier_2"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 158,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": false,
+    //                 "certificates": [],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93036,
+    //             "filter": false,
+    //             "created": 1522821849429,
+    //             "name": "Supplier facility 2",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93034
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93035,
+    //             "rdb_id": 157,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:14.395108Z",
+    //                 "created_on": "2018-03-29T07:28:14.395069Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": true,
+    //                 "filter": false,
+    //                 "name": "Supplier facility 1",
+    //                 "address": {
+    //                     "id": 301,
+    //                     "city": "Mlolongo",
+    //                     "country": "Kenya",
+    //                     "longitude": "36.938712199999998",
+    //                     "location_type": "street",
+    //                     "latitude": "-1.382109600000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 131,
+    //                     "name": "Supplier_1"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 157,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": true,
+    //                 "certificates": [
+    //                     10,
+    //                     22,
+    //                     42,
+    //                     54
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93035,
+    //             "filter": false,
+    //             "created": 1522821849427,
+    //             "name": "Supplier facility 1",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93038
+    //                 },
+    //                 {
+    //                     "id": 93066
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93042,
+    //             "rdb_id": 164,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:16.471526Z",
+    //                 "created_on": "2018-03-29T07:28:16.471486Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": true,
+    //                 "filter": false,
+    //                 "name": "Supplier facility 8",
+    //                 "address": {
+    //                     "id": 308,
+    //                     "city": "Kualalumpur",
+    //                     "country": "Malaysia",
+    //                     "longitude": "101.707478899999998",
+    //                     "location_type": "street",
+    //                     "latitude": "3.143620100000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 138,
+    //                     "name": "Supplier_8"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 164,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": true,
+    //                 "certificates": [
+    //                     45,
+    //                     65
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93042,
+    //             "filter": false,
+    //             "created": 1522821849452,
+    //             "name": "Supplier facility 8",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93038
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93040,
+    //             "rdb_id": 162,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:15.852880Z",
+    //                 "created_on": "2018-03-29T07:28:15.852841Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": true,
+    //                 "filter": false,
+    //                 "name": "Supplier facility 6",
+    //                 "address": {
+    //                     "id": 306,
+    //                     "city": "Kualalumpur",
+    //                     "country": "Malaysia",
+    //                     "longitude": "101.707478899999998",
+    //                     "location_type": "street",
+    //                     "latitude": "3.143620100000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 136,
+    //                     "name": "Supplier_6"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 162,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": true,
+    //                 "certificates": [
+    //                     31,
+    //                     63
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93040,
+    //             "filter": false,
+    //             "created": 1522821849441,
+    //             "name": "Supplier facility 6",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93038
+    //                 },
+    //                 {
+    //                     "id": 93066
+    //                 },
+    //                 {
+    //                     "id": 93066
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93039,
+    //             "rdb_id": 161,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:15.580295Z",
+    //                 "created_on": "2018-03-29T07:28:15.580259Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": true,
+    //                 "filter": false,
+    //                 "name": "Supplier facility 5",
+    //                 "address": {
+    //                     "id": 305,
+    //                     "city": "Warszawa",
+    //                     "country": "Poland",
+    //                     "longitude": "21.059510800000002",
+    //                     "location_type": "street",
+    //                     "latitude": "52.263771599999998"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 135,
+    //                     "name": "Supplier_5"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 161,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": false,
+    //                 "certificates": [
+    //                     44
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93039,
+    //             "filter": false,
+    //             "created": 1522821849440,
+    //             "name": "Supplier facility 5",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93035
+    //                 },
+    //                 {
+    //                     "id": 93035
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93057,
+    //             "rdb_id": 179,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:20.650078Z",
+    //                 "created_on": "2018-03-29T07:28:20.650044Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": false,
+    //                 "filter": false,
+    //                 "name": "A Sugar cane farmer 23",
+    //                 "address": {
+    //                     "id": 323,
+    //                     "city": "Kualalumpur",
+    //                     "country": "Malaysia",
+    //                     "longitude": "101.707478899999998",
+    //                     "location_type": "street",
+    //                     "latitude": "3.143620100000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 153,
+    //                     "name": "Supplier_23"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 179,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": false,
+    //                 "certificates": [],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93057,
+    //             "filter": false,
+    //             "created": 1522821849502,
+    //             "name": "A Sugar cane farmer 23",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93040
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93056,
+    //             "rdb_id": 178,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:20.398061Z",
+    //                 "created_on": "2018-03-29T07:28:20.398019Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": false,
+    //                 "filter": false,
+    //                 "name": "A Sugar cane farmer 22",
+    //                 "address": {
+    //                     "id": 322,
+    //                     "city": "Kualalumpur",
+    //                     "country": "Malaysia",
+    //                     "longitude": "101.707478899999998",
+    //                     "location_type": "street",
+    //                     "latitude": "3.143620100000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 152,
+    //                     "name": "Supplier_22"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 178,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": false,
+    //                 "certificates": [],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93056,
+    //             "filter": false,
+    //             "created": 1522821849496,
+    //             "name": "A Sugar cane farmer 22",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93040
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93055,
+    //             "rdb_id": 177,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:20.088458Z",
+    //                 "created_on": "2018-03-29T07:28:20.088424Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": false,
+    //                 "filter": false,
+    //                 "name": "A Sugar cane farmer 21",
+    //                 "address": {
+    //                     "id": 321,
+    //                     "city": "Kualalumpur",
+    //                     "country": "Malaysia",
+    //                     "longitude": "101.707478899999998",
+    //                     "location_type": "street",
+    //                     "latitude": "3.143620100000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 151,
+    //                     "name": "Supplier_21"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 177,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": false,
+    //                 "certificates": [],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93055,
+    //             "filter": false,
+    //             "created": 1522821849488,
+    //             "name": "A Sugar cane farmer 21",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93040
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93054,
+    //             "rdb_id": 176,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:19.799096Z",
+    //                 "created_on": "2018-03-29T07:28:19.799054Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": false,
+    //                 "filter": false,
+    //                 "name": "A Sugar cane farmer 20",
+    //                 "address": {
+    //                     "id": 320,
+    //                     "city": "Kualalumpur",
+    //                     "country": "Malaysia",
+    //                     "longitude": "101.707478899999998",
+    //                     "location_type": "street",
+    //                     "latitude": "3.143620100000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 150,
+    //                     "name": "Supplier_20"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 176,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": false,
+    //                 "certificates": [],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93054,
+    //             "filter": false,
+    //             "created": 1522821849487,
+    //             "name": "A Sugar cane farmer 20",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93040
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93053,
+    //             "rdb_id": 175,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:19.520939Z",
+    //                 "created_on": "2018-03-29T07:28:19.520906Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": false,
+    //                 "filter": false,
+    //                 "name": "A Sugar cane farmer 19",
+    //                 "address": {
+    //                     "id": 319,
+    //                     "city": "Kualalumpur",
+    //                     "country": "Malaysia",
+    //                     "longitude": "101.707478899999998",
+    //                     "location_type": "street",
+    //                     "latitude": "3.143620100000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 149,
+    //                     "name": "Supplier_19"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 175,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": true,
+    //                 "certificates": [
+    //                     71
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93053,
+    //             "filter": false,
+    //             "created": 1522821849485,
+    //             "name": "A Sugar cane farmer 19",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93040
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93052,
+    //             "rdb_id": 174,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:19.168771Z",
+    //                 "created_on": "2018-03-29T07:28:19.168730Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": true,
+    //                 "filter": false,
+    //                 "name": "A Sugar cane farmer 18",
+    //                 "address": {
+    //                     "id": 318,
+    //                     "city": "Kualalumpur",
+    //                     "country": "Malaysia",
+    //                     "longitude": "101.707478899999998",
+    //                     "location_type": "street",
+    //                     "latitude": "3.143620100000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 148,
+    //                     "name": "Supplier_18"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 174,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": true,
+    //                 "certificates": [
+    //                     19,
+    //                     52,
+    //                     62,
+    //                     70
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93052,
+    //             "filter": false,
+    //             "created": 1522821849483,
+    //             "name": "A Sugar cane farmer 18",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93040
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93051,
+    //             "rdb_id": 173,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:18.864320Z",
+    //                 "created_on": "2018-03-29T07:28:18.864279Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": true,
+    //                 "filter": false,
+    //                 "name": "A Sugar cane farmer 17",
+    //                 "address": {
+    //                     "id": 317,
+    //                     "city": "Warszawa",
+    //                     "country": "Poland",
+    //                     "longitude": "21.059510800000002",
+    //                     "location_type": "street",
+    //                     "latitude": "52.263771599999998"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 147,
+    //                     "name": "Supplier_17"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 173,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": true,
+    //                 "certificates": [
+    //                     18,
+    //                     40,
+    //                     61,
+    //                     69
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93051,
+    //             "filter": false,
+    //             "created": 1522821849482,
+    //             "name": "A Sugar cane farmer 17",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93040
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93050,
+    //             "rdb_id": 172,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:18.581312Z",
+    //                 "created_on": "2018-03-29T07:28:18.581278Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": true,
+    //                 "filter": false,
+    //                 "name": "A Sugar cane farmer 16",
+    //                 "address": {
+    //                     "id": 316,
+    //                     "city": "Kualalumpur",
+    //                     "country": "Malaysia",
+    //                     "longitude": "101.707478899999998",
+    //                     "location_type": "street",
+    //                     "latitude": "3.143620100000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 146,
+    //                     "name": "Supplier_16"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 172,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": true,
+    //                 "certificates": [
+    //                     28,
+    //                     39,
+    //                     51,
+    //                     68
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93050,
+    //             "filter": false,
+    //             "created": 1522821849474,
+    //             "name": "A Sugar cane farmer 16",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93040
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93049,
+    //             "rdb_id": 171,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:18.325659Z",
+    //                 "created_on": "2018-03-29T07:28:18.325624Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": true,
+    //                 "filter": false,
+    //                 "name": "A Sugar cane farmer 15",
+    //                 "address": {
+    //                     "id": 315,
+    //                     "city": "Warszawa",
+    //                     "country": "Poland",
+    //                     "longitude": "21.059510800000002",
+    //                     "location_type": "street",
+    //                     "latitude": "52.263771599999998"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 145,
+    //                     "name": "Supplier_15"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 171,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": true,
+    //                 "certificates": [
+    //                     17,
+    //                     27,
+    //                     38
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93049,
+    //             "filter": false,
+    //             "created": 1522821849473,
+    //             "name": "A Sugar cane farmer 15",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93040
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93037,
+    //             "rdb_id": 159,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:14.966994Z",
+    //                 "created_on": "2018-03-29T07:28:14.966952Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": true,
+    //                 "filter": false,
+    //                 "name": "Supplier facility 3",
+    //                 "address": {
+    //                     "id": 303,
+    //                     "city": "Bangkok",
+    //                     "country": "Thailand",
+    //                     "longitude": "100.494097400000001",
+    //                     "location_type": "street",
+    //                     "latitude": "13.744781500000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 133,
+    //                     "name": "Supplier_3"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 159,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": false,
+    //                 "certificates": [
+    //                     30,
+    //                     55
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93037,
+    //             "filter": false,
+    //             "created": 1522821849431,
+    //             "name": "Supplier facility 3",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93036
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93066,
+    //             "rdb_id": 187,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:34:17.436078Z",
+    //                 "created_on": "2018-03-29T07:29:06.477276Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": false,
+    //                 "filter": false,
+    //                 "name": "Circuit Board Factory",
+    //                 "address": {
+    //                     "id": 333,
+    //                     "city": "Pudao",
+    //                     "country": "China",
+    //                     "longitude": null,
+    //                     "location_type": null,
+    //                     "latitude": null
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 127,
+    //                     "name": "Syn Omega"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 187,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.73",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": false,
+    //                 "certificates": [],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93066,
+    //             "filter": false,
+    //             "created": 1522821849525,
+    //             "name": "Circuit Board Factory",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93036
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93048,
+    //             "rdb_id": 170,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:18.071129Z",
+    //                 "created_on": "2018-03-29T07:28:18.071086Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": true,
+    //                 "filter": false,
+    //                 "name": "Supplier facility 14",
+    //                 "address": {
+    //                     "id": 314,
+    //                     "city": "Hà Nội",
+    //                     "country": "Viet Nam",
+    //                     "longitude": "105.838394600000001",
+    //                     "location_type": "street",
+    //                     "latitude": "21.028285199999999"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 144,
+    //                     "name": "Supplier_14"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 170,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": true,
+    //                 "certificates": [
+    //                     16,
+    //                     26,
+    //                     37,
+    //                     50,
+    //                     60
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93048,
+    //             "filter": false,
+    //             "created": 1522821849471,
+    //             "name": "Supplier facility 14",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93039
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93047,
+    //             "rdb_id": 169,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:17.781034Z",
+    //                 "created_on": "2018-03-29T07:28:17.781000Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": true,
+    //                 "filter": false,
+    //                 "name": "Supplier facility 13",
+    //                 "address": {
+    //                     "id": 313,
+    //                     "city": "Bangkok",
+    //                     "country": "Thailand",
+    //                     "longitude": "100.494097400000001",
+    //                     "location_type": "street",
+    //                     "latitude": "13.744781500000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 143,
+    //                     "name": "Supplier_13"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 169,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": false,
+    //                 "certificates": [
+    //                     36
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93047,
+    //             "filter": false,
+    //             "created": 1522821849464,
+    //             "name": "Supplier facility 13",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93039
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93046,
+    //             "rdb_id": 168,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:17.507801Z",
+    //                 "created_on": "2018-03-29T07:28:17.507767Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": true,
+    //                 "filter": false,
+    //                 "name": "Supplier facility 12",
+    //                 "address": {
+    //                     "id": 312,
+    //                     "city": "Khet Watthana",
+    //                     "country": "Thailand",
+    //                     "longitude": "100.552942799999997",
+    //                     "location_type": "street",
+    //                     "latitude": "13.744870700000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 142,
+    //                     "name": "Supplier_12"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 168,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": true,
+    //                 "certificates": [
+    //                     15,
+    //                     35,
+    //                     49,
+    //                     59
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93046,
+    //             "filter": false,
+    //             "created": 1522821849463,
+    //             "name": "Supplier facility 12",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93039
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             "product_id": 93045,
+    //             "rdb_id": 167,
+    //             "details": {
+    //                 "modified_on": "2018-03-29T07:28:17.260898Z",
+    //                 "created_on": "2018-03-29T07:28:17.260850Z",
+    //                 "dummy": false,
+    //                 "has_social_cert": true,
+    //                 "filter": false,
+    //                 "name": "Supplier facility 11",
+    //                 "address": {
+    //                     "id": 311,
+    //                     "city": "Mlolongo",
+    //                     "country": "Kenya",
+    //                     "longitude": "36.938712199999998",
+    //                     "location_type": "street",
+    //                     "latitude": "-1.382109600000000"
+    //                 },
+    //                 "subcontractors": [],
+    //                 "company": {
+    //                     "id": 141,
+    //                     "name": "Supplier_11"
+    //                 },
+    //                 "facility_type": {
+    //                     "id": 10,
+    //                     "name": "Factory"
+    //                 },
+    //                 "id": 167,
+    //                 "has_quality_cert": false,
+    //                 "completeness": "0.93",
+    //                 "subcontractor_buyers": [],
+    //                 "has_environment_cert": true,
+    //                 "certificates": [
+    //                     14,
+    //                     25,
+    //                     34,
+    //                     48,
+    //                     58,
+    //                     67
+    //                 ],
+    //                 "is_subcontractor": false
+    //             },
+    //             "db_id": 93045,
+    //             "filter": false,
+    //             "created": 1522821849462,
+    //             "name": "Supplier facility 11",
+    //             "parents_id": [
+    //                 {
+    //                     "id": 93039
+    //                 }
+    //             ]
+    //         }
+    //     ]
+var $productsSelect = $('select.products-select'),
     svg,
     DOWNSALE_TYPE = 'downsale',
     UPSALE_TYPE = 'upsale',
