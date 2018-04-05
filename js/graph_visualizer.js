@@ -1,16 +1,18 @@
 (function () {
   var linksData = [
-    { "product_id": 6, "name": "CallOfDuty", "parents_id": [{id: 3, "type": "downsale"}]},
-    { "product_id": 1, "name": "World Of Warcraft", "parents_id": [{id: 2, "type": "upsale"}]},
+    { "product_id": 6, "name": "CallOfDuty", "parents_id": [{id: 3}]},
+    { "product_id": 1, "name": "World Of Warcraft", "parents_id": [{id: 2}]},
     { "product_id": 2, "name": "Prince of Persia", "parents_id": null },
-    { "product_id": 3, "name": "Assassin's Creed", "parents_id": [{id: 1, "type": "upsale"}]},
-    { "product_id": 4, "name": "Diablo", "parents_id": [{id: 1, "type": "downsale"}]},
-    { "product_id": 5, "name": "Lineage 2 Classic", "parents_id": [{id: 2, "type": "downsale"}]},
-    { "product_id": 7, "name": "CounterStrike 1.6", "parents_id": [{id: 5, "type": "upsale"}, {id: 4, "type": "upsale"}]},
-    { "product_id": 8, "name": "GTA San Andreas", "parents_id": [{id: 7, "type": "downsale"},
-        {id: 4, "type": "downsale"}]},
-    { "product_id": 9, "name": "Cossacks: European battles", "parents_id": [{id: 8, "type": "downsale"},
-        {id: 5, "type": "downsale"}]}
+    { "product_id": 3, "name": "Assassin's Creed", "parents_id": [{id: 1}]},
+    { "product_id": 4, "name": "Diablo", "parents_id": [{id: 1}]},
+    { "product_id": 10, "name": "Diablo 1", "parents_id": [{id: 1}]},
+    { "product_id": 11, "name": "Diablo 2", "parents_id": [{id: 1}, {id: 5}]},
+    { "product_id": 5, "name": "Lineage 2 Classic", "parents_id": [{id: 2}]},
+    { "product_id": 7, "name": "CounterStrike 1.6", "parents_id": [{id: 4}]},
+    { "product_id": 8, "name": "GTA San Andreas", "parents_id": [{id: 7},
+        {id: 4}]},
+    { "product_id": 9, "name": "Cossacks: European battles", "parents_id": [{id: 8},
+        {id: 5}]}
   ],
     $productsSelect = $('select.products-select'),
     svg,
@@ -73,7 +75,7 @@
     return {
       name: params.name || '--',
       parents_id: params.parents_id || null,
-      type: params.type || undefined,
+      type: UPSALE_TYPE,
       product_id: params.product_id
     };
   }
@@ -82,7 +84,7 @@
     return {
       name: params.name || '--',
       parent: params.parent || null,
-      type: params.type || UPSALE_TYPE
+      type: UPSALE_TYPE
     };
   }
   function reduceArray(arr) {
@@ -107,15 +109,15 @@
           if (parentLength > 1) {
             if (index !== parentLength - 1) {
               if (!parent.data_targets_id) {
-                parent.data_targets_id = [{id: node.product_id, type: parentItem.type}];
+                parent.data_targets_id = [{id: node.product_id, type: UPSALE_TYPE}];
               } else {
-                parent.data_targets_id.push({id: node.product_id, type: parentItem.type});
+                parent.data_targets_id.push({id: node.product_id, type: UPSALE_TYPE});
               }
               return;
             }
           }
           parent.children =  parent.children || [];
-          node.type = parentItem.type;
+          node.type = UPSALE_TYPE;
           parent.children.push(node);
         });
       } else {
@@ -125,60 +127,11 @@
     });
 
     function addEmptyNodes(node) {
-      var upsaleNode,
-        downsaleNode,
-        someNode;
       if (node.children) {
         //Should to add only 1 empty node
         node.children.forEach(function (child) {
           addEmptyNodes(child);
         });
-
-        if (node.children.length === 1) {
-          someNode = new Node({
-            parent: node
-          });
-          if (node.children[0].type === UPSALE_TYPE) {
-            someNode.type = DOWNSALE_TYPE;
-          } else {
-            someNode.type = UPSALE_TYPE;
-          }
-
-          if (node.data_targets_id) {
-            node.data_targets_id.forEach(function (currentTarget) {
-              if (currentTarget.type !== node.children[0].type) {
-                someNode.hidden = true;
-              }
-            });
-          }
-
-          node.children.push(someNode);
-        }
-        //Change upsale to be first, cause it will be displayed by d3 as top node of two children
-        node.children.sort(function (child) {
-          return child.type === DOWNSALE_TYPE ? 1 : -1;
-        });
-
-      } else {
-        //Should to add 2 empty nodes
-        upsaleNode = new Node({
-          parent: node,
-          type: UPSALE_TYPE
-        });
-        downsaleNode = new Node({
-          parent: node,
-          type: DOWNSALE_TYPE
-        });
-        if (node.data_targets_id) {
-          node.data_targets_id.forEach(function (currentTarget) {
-            if (currentTarget.type === UPSALE_TYPE) {
-              upsaleNode.hidden = true;
-            } else {
-              downsaleNode.hidden = true;
-            }
-          });
-        }
-        node.children = [upsaleNode, downsaleNode];
       }
     }
     addEmptyNodes(treeData[0]);
@@ -186,6 +139,7 @@
   }
 
   function drawNodes(nodes) {
+    console.log(nodes);
     var i = 0,
       node = svg.selectAll("g.node")
         .data(nodes, function (d) {
@@ -198,9 +152,6 @@
     return node.enter().append("g")
       .attr("class", function (d) {
         var nodeClasses = renderOptions.classes.nodeClass;
-        if (d.hidden) {
-          nodeClasses += ' ' + renderOptions.classes.classToHideElement;
-        }
         return nodeClasses;
       })
       .attr("data-index", function (d) {
@@ -212,7 +163,7 @@
         }
       })
       .attr("data-type", function (d) {
-        return d.type;
+        return UPSALE_TYPE;
       })
       .attr("transform", function (d) {
         return "translate(" + d.y + "," + d.x + ")";
@@ -236,14 +187,9 @@
       });
     link.enter().insert("path", "g")
       .attr("class", function (d) {
-        var linkClasses = renderOptions.classes.linkClass + " " + d.target.type;
+        var linkClasses = renderOptions.classes.linkClass + " " + UPSALE_TYPE;
         if (d.source.data_targets_id) {
           targets = d.source.data_targets_id;
-          targets.forEach(function (currentTarget) {
-            if (currentTarget.type === d.target.type) {
-              linkClasses += ' ' + renderOptions.classes.classToHideElement;
-            }
-          });
         }
         return linkClasses;
       })
@@ -288,11 +234,11 @@
               if (index !== 3) {
                 newPath += word;
               } else {
-                if (targets[position].type === UPSALE_TYPE) {
-                  spaceCoord = renderOptions.topDirectedLinkPathCoord;
-                } else {
+                //if (targets[position].type === UPSALE_TYPE) {
+                  //spaceCoord = renderOptions.topDirectedLinkPathCoord;
+                //} else {
                   spaceCoord = renderOptions.bottomDirectedLinkPathCoord;
-                }
+                //}
                 newPath += spaceCoord + ' ' + pathDigitsMas[6];
               }
               if (index !== 4) {
@@ -383,29 +329,6 @@
     nodes.forEach(function (d) {
       d.y = d.depth * renderOptions.spaceBetweenDepthLevels;
     });
-
-    function addFixedDepth() {
-      nodes.forEach(function (d) {
-        if (d.data_targets_id) {
-          var targets = d.data_targets_id;
-          targets.forEach(function (currentTarget) {
-            var target = nodesMap[currentTarget.id],
-              source = d;
-            if (source.y >= target.y) {
-              isBackRelations = true;
-              replaceNodeAndChildren(target, target, source.depth + 1);
-              target.depth = source.depth + 1;
-            }
-          });
-        }
-      });
-      if (isBackRelations) {
-        isBackRelations = false;
-        addFixedDepth();
-      }
-    }
-
-    addFixedDepth();
 
     nodeGroup = drawNodes(nodes);
 
