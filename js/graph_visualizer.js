@@ -431,86 +431,8 @@
     $('.' + renderOptions.classes.nodeClass).on('click', nodeClickHandler);
   }
 
-  function changeGraphLink(param) {
-    var removedProductId,
-      productIsDuplicated,
-      newGraphLink;
-    if (param.index !== undefined) {
-      removedProductId = linksData[param.index].product_id;
-      linksData[param.index].name = param.productToPaste.name;
-      linksData[param.index].product_id = param.productToPaste.product_id;
-      //Save previous product relations
-      linksData.forEach(function (item) {
-        if (item.parents_id) {
-          item.parents_id.forEach(function (parentItem, index) {
-            if (parentItem.id === removedProductId) {
-              item.parents_id[index].id = param.productToPaste.product_id;
-            }
-          });
-        }
-      });
-    } else {
-      productIsDuplicated = false;
-      linksData.forEach(function (item) {
-        if (item.product_id === param.productToPaste.product_id) {
-          item.parents_id.push({id: linksData[param.parentIndex].product_id, type: param.type});
-          productIsDuplicated = true;
-        }
-      });
-      if (!productIsDuplicated) {
-        newGraphLink = new GraphLink({
-          parents_id: [{id: linksData[param.parentIndex].product_id, type: param.type}],
-          name: param.productToPaste.name,
-          product_id: param.productToPaste.product_id
-        });
-        linksData.push(newGraphLink);
-      }
-    }
-  }
-
   function nodeClickHandler() {
-    var $target = $(this),
-      template = app.productsSelectOptions,
-      clickedNodeIndex = $target.data('index'),
-      clickedNodeParentIndex = $target.data('parent-index'),
-      clickedNodeType = $target.data('type'),
-      productsFromSelect;
-    //if (clickedNodeIndex) {
-    //  dataToRender[clickedNodeIndex].selected = true;
-    //}
-    productsFromSelect = [{"name": "NewProduct1", product_id: 101},
-      {"name": "NewProduct2", product_id: 102},
-      {"name": "NewProduct3", product_id: 103},
-      {"name": "NewProduct4", product_id: 104},
-      {"name": "NewProduct5", product_id: 105},
-      {"name": "NewProduct6", product_id: 106},
-      {"name": "NewProduct7", product_id: 107},
-      {"name": "NewProduct8", product_id: 108}];
-    productsFromSelect.forEach(function (item, index) {
-      item.index = index;
-    });
-
-    $productsSelect.html(Mustache.to_html(template, {data: productsFromSelect}));
-    $productsSelect.select2();
-    $('.funnel-modal').modal('toggle');
-
-    function redrawGraph() {
-      $('svg').remove();
-      svg = null;
-      renderTree(generateTree(linksData), nodeClickHandler);
-    }
-
-    $('.save-selected-product').off('click').on('click', function () {
-      $('.funnel-modal').modal('toggle');
-      var selectedProductIndex = +$productsSelect.val();
-      changeGraphLink({
-        index: clickedNodeIndex,
-        parentIndex: clickedNodeParentIndex,
-        type: clickedNodeType,
-        productToPaste: productsFromSelect[selectedProductIndex]
-      });
-      redrawGraph();
-    });
+    console.log("clicked a node");
   }
 
   renderTree(generateTree(linksData), nodeClickHandler);
