@@ -4,8 +4,8 @@
 }
 
 .graph-container .node circle {
-  fill: #fff;
-  stroke: #153ba3;
+  fill: #80abc8;
+  stroke: #80abc8;
   stroke-width: 3px;
   transition: r ease-in-out 0.2s;
 }
@@ -29,7 +29,7 @@
 }
 
 .graph-container .link.upsale {
-  stroke: #15a31f;
+  stroke: #666666;
 }
 
 .graph-container .link.downsale {
@@ -37,7 +37,7 @@
 }
 
 .graph-container marker.upsale_marker {
-  fill: #15a31f;
+  fill: #666666;
 }
 
 .graph-container marker.downsale_marker {

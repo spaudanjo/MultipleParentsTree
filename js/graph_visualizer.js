@@ -1616,7 +1616,7 @@
     DOWNSALE_TYPE = 'downsale',
     UPSALE_TYPE = 'upsale',
     SVG_WIDTH = 3000,
-    SVG_HEIGHT = 500,
+    SVG_HEIGHT = 800,
     SVG_MARGIN = {top: 20, right: 120, bottom: 20, left: 120},
     MARKER_CLASS_END = '_marker',
     UPSALE_MARKER_CLASS = "upsale",
@@ -1637,7 +1637,7 @@
     },
     CIRCLE_CSS_STYLES = {
       r: 10,
-      fill: '#fff',
+      fill: '#80abc8',
       fillOpacity: 1,
       text: {
         dy: '-1em',
@@ -1661,7 +1661,7 @@
       bottomDirectedLinkPathCoord: BOTTOM_DIRECTED_LINK_PATH_COORD,
 
       markerClassEnd: MARKER_CLASS_END,
-      upsaleMarkerClass: UPSALE_MARKER_CLASS + MARKER_CLASS_END,
+      upsaleMarkerClass: UPSALE_MARKER_CLASS,
       downsaleMarkerClass: DOWNSALE_MARKER_CLASS + MARKER_CLASS_END,
       markerCssStyles: MARKER_CSS_STYLES,
 
